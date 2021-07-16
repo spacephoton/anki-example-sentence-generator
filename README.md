@@ -1,0 +1,1 @@
+# anki-example-sentence-generator
