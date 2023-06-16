@@ -1,49 +1,55 @@
-word,sentence,start_time,end_time,sentence_previous,sentence_next,occurrences
-quilos,O que acontece se despejarem milhares de quilos de cocaína,11580,15140,,numa das aldeias mais pobres da Europa?,4
-cocaína,O que acontece se despejarem milhares de quilos de cocaína,11580,15140,,numa das aldeias mais pobres da Europa?,6
-pobres,porque os moradores eram tão pobres que vendiam as melhores partes do peixe,1360660,1364860,Dizem que este lugar se chama Rabo de Peixe,e só comiam as caudas com espinhas.,3
-cabeça,Não se aguenta aquela gente sem uma bela moca na cabeça.,820180,823140,Como correu lá na cidade?,Tu estás a falar de quem?,4
-Eduardo,E o Eduardo era um lobo do mar.,1917420,1919020,"Às vezes, só é preciso sabermos uma coisa antes de toda a gente.",Percebeu que o que dava à costa tinha de vir de algum lado.,4
-nariz,"Em vez de pores esta merda no nariz, podemos mudar a nossa vida.",1777980,1781380,Comprava uma casa à minha mãe.,Olha o meu mano...,3
-caralho,"Fodase, nunca ninguém me deu nada na vida, caralho.",2419100,2421780,O meu pai não vê um palmo à frente do nariz.,Nada de nada.,12
-Nuno,"Tiras o Poborsky, o Nuno Gomes e o Maniche e o Benfica não tem grande equipa.",137940,141820,Embora lá?,"Se tirares toda a gente, não tem.",3
-Gomes,"Tiras o Poborsky, o Nuno Gomes e o Maniche e o Benfica não tem grande equipa.",137940,141820,Embora lá?,"Se tirares toda a gente, não tem.",3
-mar,mas tive de deixar a escola para ir para o mar todas as noites.,2274900,2278100,"Eu era o melhor aluno da minha turma,",Rafael.,9
-daqui,"se estiver à espera do teu menisco, saio daqui todo molhado.",181500,184900,"Olha,",Vamos.,5
-Olha,"Olha lá, de onde essa veio, há muito mais, Rafael.",1796940,1799420,"Mandamos um tiquitiqui, tiquitaco.",Encontramola.,3
-vou,Como achas que vou pagar a um fotógrafo profissional?,560940,563900,É fotógrafo de moda.,Ligalhe e diz que vais da minha parte.,3
-casa,"Amanhã recuperamos a carga, zarpamos e vamos para casa.",1464740,1467620,Encomendou uma peça para o leme.,"As pessoas como tu, que metem essa merda no café, deviam ser presas.",4
-América,Quando é que um açoriano precisa de visto para ir para a América?,918460,921780,"Pelo menos, até o meu pai ser operado.",Vais e pronto.,4
-costa,Percebeu que o que dava à costa tinha de vir de algum lado.,1919020,1922060,E o Eduardo era um lobo do mar.,Bastava seguir as correntes.,4
-mundo,Dizse que os açorianos têm um desejo ardente de correr o mundo.,400020,403820, ,Tretas.,4
-pai,Porque insistes em chamar o Arruda de meu pai?,1327500,1330100,Agradece ao teu pai.,"Fodase, Rafael!",4
-operação,"Nós continuaremos aqui, a cobrir esta operação policial",1663460,1667500,Foram as declarações do inspetor Banha.,nunca antes vista no arquipélago.,3
-Deus,"Se eu não fui operado, Deus lá saberá porquê.",587820,590820,"Desculpa a confusão no hospital, pai.",É. Vais ver que as coisas vão melhorar.,4
-merda,"As pessoas como tu, que metem essa merda no café, deviam ser presas.",1479460,1483980,"Amanhã recuperamos a carga, zarpamos e vamos para casa.",Atravessámos o Atlântico com um veleiro carregado de droga,12
-parar,"Se a droga vai parar ao mar, nós morreremos em terra!",997940,1001100,Não vou morrer afogado por causa da merda da cocaína!,"Estás a perceber, fodase?",5
-droga,Atravessámos o Atlântico com um veleiro carregado de droga,1483980,1488220,"As pessoas como tu, que metem essa merda no café, deviam ser presas.",e não há problema.,6
-algum,Percebeu que o que dava à costa tinha de vir de algum lado.,1919020,1922060,E o Eduardo era um lobo do mar.,Bastava seguir as correntes.,5
-Rabo,"arrestados na Bretanha, Porto Formoso e, sobretudo, em Rabo de Peixe.",1621300,1625660,A Polícia Judiciária já contabilizou 148 quilos,Pai.,7
-Peixe,"arrestados na Bretanha, Porto Formoso e, sobretudo, em Rabo de Peixe.",1621300,1625660,A Polícia Judiciária já contabilizou 148 quilos,Pai.,7
-podemos,"Em vez de pores esta merda no nariz, podemos mudar a nossa vida.",1777980,1781380,Comprava uma casa à minha mãe.,Olha o meu mano...,3
-Queres,Queres atracar com o barco cheio de droga?,977660,980180,Estás louco ou quê?,"Então, vamos atirar tudo para o mar!",3
-terra,"Se a droga vai parar ao mar, nós morreremos em terra!",997940,1001100,Não vou morrer afogado por causa da merda da cocaína!,"Estás a perceber, fodase?",3
-carro,"Não posso ficar sem carro, Rafael.",1130820,1132620,Tu sabes., ,3
-Rafael,"Olha lá, de onde essa veio, há muito mais, Rafael.",1796940,1799420,"Mandamos um tiquitiqui, tiquitaco.",Encontramola.,7
-queres,"Não queres, não queres, tu é que sabes.",1151860,1155220,"Ó Eduardo... Queres, queres.", ,5
-sair,Só vai sair depois de ser cruzada com um cão de fila.,1278100,1281660,"Ó Sr. Doutor, esta cadela não vai sair daqui.",Dêlhe a cadela.,3
-Vamos,Vamos dizer que matámos um turista italiano?,2620260,2623260,Vamos à Polícia.,Dizemos que foi um acidente.,6
-linda,"Ei, pesseguinha linda...",1350860,1353580,Que culpa é que eu tenho?,"Mãos no volante, ó baboso.",3
-filho,"Aquele filho da puta, deume isto para te comprar um presente.",1321860,1325820,..., ,4
-puta,"Aquele filho da puta, deume isto para te comprar um presente.",1321860,1325820,..., ,4
-Amanhã,Amanhã é dia de procissão e esta carinha precisa de um sono de beleza.,2506660,2510220,Vou descansar.,Cara linda!,3
-café,"As pessoas como tu, que metem essa merda no café, deviam ser presas.",1479460,1483980,"Amanhã recuperamos a carga, zarpamos e vamos para casa.",Atravessámos o Atlântico com um veleiro carregado de droga,4
-apreensão,que poderá resultar na maior apreensão de sempre no arquipélago.,1595380,1599420,Decorre ainda uma operação policial,É um bocado amarga.,4
-Polícia,E a Polícia diz que gajos de Rabo de Peixe mataram um turista.,2625540,2628700,Fodase.,"Empurra o gajo, Rafael!",4
-milhões,Tratase de uma apreensão recorde de nove milhões de euros.,1645940,1650140,"Inspetor Banha, e o valor da apreensão?",O preço de mercado é de 60 mil euros o quilo.,3
-euros,Tratase de uma apreensão recorde de nove milhões de euros.,1645940,1650140,"Inspetor Banha, e o valor da apreensão?",O preço de mercado é de 60 mil euros o quilo.,5
-vida,Passas a tua vida perdido entre o que foste e o que nunca chegaste a ser.,2287300,2291220,mas agora coxeias sempre que chove.,"E tu, Carlinhos?",4
-veio,"Olha lá, de onde essa veio, há muito mais, Rafael.",1796940,1799420,"Mandamos um tiquitiqui, tiquitaco.",Encontramola.,6
-Dom,Vamos dizer ao Dom Massimo o que aconteceu.,2195860,2197980,Fodidos!,Não.,3
-Massimo,Vamos dizer ao Dom Massimo o que aconteceu.,2195860,2197980,Fodidos!,Não.,3
-vontade,"Isto também é a vontade de Deus, Rafael.",2366660,2368660,Isto também é a vontade de Deus.,Deus só nos castiga.,3
+word,sentence,start_time,end_time,sentence_previous,sentence_next,occurrences,words
+acontece,O que acontece se despejarem milhares de quilos de cocaína,11580,15140,,numa das aldeias mais pobres da Europa?,4,"['acontece', 'despejarem', 'milhares', 'quilos', 'cocaína']"
+Eduardo,E o Eduardo era um lobo do mar.,1917420,1919020,"Às vezes, só é preciso sabermos uma coisa antes de toda a gente.",Percebeu que o que dava à costa tinha de vir de algum lado.,6,"['Eduardo', 'lobo', 'mar']"
+história,"Eu podia dizer que a história começou neste momento,",70060,72620,"Meu rapaz, Eduardo.",com o rapazim borrado de medo,3,"['história', 'começou']"
+falar,"Ou ir um pouco mais atrás e falar de um sítio estranho,",74820,77540,.,onde coisas estranhas costumam acontecer,3,"['falar', 'sítio', 'estranho']"
+coisas,onde coisas estranhas costumam acontecer,77540,79700,"Ou ir um pouco mais atrás e falar de um sítio estranho,",.,4,"['coisas', 'estranhas', 'costumam', 'acontecer']"
+caralho,"Empurra, caralho!",2638100,2640620,Empurra!,Não puxes!,18,"['Empurra', 'caralho']"
+Nuno,O Nuno Gomes a coser as redes.,149100,152780,O Maniche aí a lançar o engodo.,Era giro.,3,"['Nuno', 'Gomes', 'coser', 'redes']"
+gente,E gente perigosa.,2260740,2262460,"Mais cedo ou mais tarde, vêm procurála.",Porque é que uns têm direito a tudo e outros não têm direito a nada?,4,"['gente', 'perigosa']"
+daqui,A andar daqui para fora!,1304260,1306740,Sai daqui!,Patrão?,9,"['andar', 'daqui']"
+Olha,"Olha lá, de onde essa veio, há muito mais, Rafael.",1796940,1799420,"Mandamos um tiquitiqui, tiquitaco.",Encontramola.,5,"['Olha', 'veio', 'há', 'Rafael']"
+fila,"Uma fila, queres tu dizer.",306180,308700,"Mas não é assim que funciona, há uma bicha.",Bom...,4,"['fila', 'queres']"
+queres,"Não queres, não queres, tu é que sabes.",1151860,1155220,"Ó Eduardo... Queres, queres.", ,6,"['queres', 'queres', 'sabes']"
+vou,Não vou morrer afogado por causa da merda da cocaína!,993540,997940,Experimenta e vais parar ao mar!,"Se a droga vai parar ao mar, nós morreremos em terra!",3,"['vou', 'morrer', 'afogado', 'causa', 'merda', 'cocaína']"
+costa,em vários pontos da costa norte de São Miguel,1589780,1593140,Dezenas de quilos de cocaína apareceram esta tarde,.,4,"['costa', 'norte', 'Miguel']"
+mundo,Em que mundo é que essa tua história acaba,2308740,2311180,Já te levaram ao cinema?,com um E viveram felizes para sempre?,4,"['mundo', 'história', 'acaba']"
+pai,O meu pai não vê um palmo à frente do nariz.,2412820,2415260,O meu pai...,"Fodase, nunca ninguém me deu nada na vida, caralho.",7,"['pai', 'vê', 'palmo', 'frente', 'nariz']"
+operação,A operação estava marcada para ontem.,440900,443140,Não são só uns números.,Mas na carta diz 5 de junho de 2001.,4,"['operação', 'marcada']"
+hoje,Mas na carta diz que é hoje.,447180,451420,"Pois, mas no sistema diz que era ontem.  ","Olhe, não sei.",3,"['carta', 'hoje']"
+Deus,Deus só nos castiga.,2369820,2370900,"Isto também é a vontade de Deus, Rafael.",Não é?,6,"['Deus', 'castiga']"
+merda,"Sabes, ao menos, quanto esta merda custa?",1766980,1769780,Acontece., ,14,"['Sabes', 'merda']"
+parar,Isto é areia que veio cá parar.,2242260,2244380,Isto não é areia a mais para a nossa camioneta?,"Nós não fizemos nada, certo?",5,"['areia', 'veio', 'parar']"
+Gianluca,"Gianluca, o que aconteceu?",2581980,2584500, ,Gianluca?,4,"['Gianluca', 'aconteceu']"
+droga,"Se a droga vai parar ao mar, nós morreremos em terra!",997940,1001100,Não vou morrer afogado por causa da merda da cocaína!,"Estás a perceber, fodase?",7,"['droga', 'parar', 'mar', 'morreremos', 'terra']"
+algum,Sou algum miúdo para me pores a mijar?,1632620,1636420, ,"Vá, está tudo bem.",5,"['algum', 'miúdo', 'pores', 'mijar']"
+Rabo,"Se Rabo de Peixe aparecia na televisão,",1368300,1370260,e só comiam as caudas com espinhas.,mostravamnos sempre como cidadãos de terceira categoria.,7,"['Rabo', 'Peixe', 'aparecia', 'televisão']"
+contigo,estou a falar contigo.,2330900,2332820,"Sílvia,",Queres?,3,"['falar', 'contigo']"
+Vou,Vou entregar estas merdas.,1141580,1144740,Às sextas não saio.,"Se quiseres, vem e dividimos o guito.",4,"['Vou', 'entregar', 'merdas']"
+podemos,"Não podemos ir à Polícia, caralho!",2604540,2607940,Dizemos que foi um acidente.  ,Com a puta da cocaína que puseram hoje.,3,"['podemos', 'Polícia', 'caralho']"
+Queres,Queres atracar com o barco cheio de droga?,977660,980180,Estás louco ou quê?,"Então, vamos atirar tudo para o mar!",3,"['Queres', 'atracar', 'barco', 'cheio', 'droga']"
+vamos,"Então, vamos atirar tudo para o mar!",981140,983100,Queres atracar com o barco cheio de droga?,Não me quero lixar!,3,"['vamos', 'atirar', 'mar']"
+sair,Só vai sair depois de ser cruzada com um cão de fila.,1278100,1281660,"Ó Sr. Doutor, esta cadela não vai sair daqui.",Dêlhe a cadela.,3,"['sair', 'cruzada', 'cão', 'fila']"
+andar,"Vão poder andar aí na rua a fumar um charro,",1266220,1268380,Ninguém vai legalizar a droga.,"mas, se forem apanhados com um sabonete desses, vão de cana.",4,"['andar', 'rua', 'fumar', 'charro']"
+Fodase,"Fodase, nunca ninguém me deu nada na vida, caralho.",2419100,2421780,O meu pai não vê um palmo à frente do nariz.,Nada de nada.,6,"['Fodase', 'ninguém', 'deu', 'vida', 'caralho']"
+Vamos,Vamos dizer que matámos um turista italiano?,2620260,2623260,Vamos à Polícia.,Dizemos que foi um acidente.,8,"['Vamos', 'matámos', 'turista', 'italiano']"
+cão,Este cão de fila é de quem?,1253820,1256540,Coisinha tão bonita...,É minha a cadela.,3,"['cão', 'fila']"
+filho,"Aquele filho da puta, deume isto para te comprar um presente.",1321860,1325820,..., ,5,"['filho', 'puta', 'deume', 'comprar', 'presente']"
+puta,Com a puta da cocaína que puseram hoje.,2607940,2610020,"Não podemos ir à Polícia, caralho!", ,5,"['puta', 'cocaína', 'puseram', 'hoje']"
+Sai,"Sai do carro, caralho!",2591500,2593980,"Não!  Não toques nele, Rafael!","Sai, fodase!",3,"['Sai', 'carro', 'caralho']"
+mano,Olha o meu mano...,1782500,1784780,"Em vez de pores esta merda no nariz, podemos mudar a nossa vida.","Dá cá um abraço, caralho.",3,"['Olha', 'mano']"
+Amanhã,"Amanhã recuperamos a carga, zarpamos e vamos para casa.",1464740,1467620,Encomendou uma peça para o leme.,"As pessoas como tu, que metem essa merda no café, deviam ser presas.",3,"['Amanhã', 'recuperamos', 'carga', 'zarpamos', 'vamos', 'casa']"
+café,e café sem esse veneno de ratos.,1504340,1506100,... pila dura,"Francesco,",4,"['café', 'veneno', 'ratos']"
+Polícia,E a Polícia diz que gajos de Rabo de Peixe mataram um turista.,2625540,2628700,Fodase.,"Empurra o gajo, Rafael!",7,"['Polícia', 'gajos', 'Rabo', 'Peixe', 'mataram', 'turista']"
+apreensão,É uma apreensão sem precedentes em São Miguel.,1654300,1657700, , ,4,"['apreensão', 'precedentes', 'Miguel']"
+milhões,"Vinte e três milhões, oitocentos e vinte mil euros.",2169740,2173180,Trezentos e noventa e sete quilos.,Fodase.,3,"['milhões', 'oitocentos', 'euros']"
+blica,A blica de coca.,1872300,1873300,Hã?,"No século XV, Espanha e Portugal dividiram o planeta em dois.",3,"['blica', 'coca']"
+mãe,A minha mãe morreu.,2405020,2405980,Não volta a acontecer., ,5,"['mãe', 'morreu']"
+vida,Só acontece uma vez na vida.,2383500,2386780,Esta é a nossa oportunidade.,Uma.,5,"['acontece', 'vida']"
+veio,Como veio aqui parar e de onde veio não interessa.,1801300,1805260,A corrente trouxea.,Interessa que está aqui!,6,"['veio', 'parar', 'veio', 'interessa']"
+Dom,O Dom Massimo não nos pode ajudar.,2197980,2200340,Não.,Temos de recuperar a carga para regressamos a casa.,3,"['Dom', 'Massimo', 'ajudar']"
+aconteceu,"O que aconteceu, Gianluca?",2529340,2531220,"Não, não, não.",Perdemos a carga.,3,"['aconteceu', 'Gianluca']"
+fizemos,"O que fizemos para merecer esta sina, caralho?",2353660,2356540, ,A sorte nunca cai aqui nesta terra porquê?,3,"['fizemos', 'merecer', 'sina', 'caralho']"
+vontade,"Isto também é a vontade de Deus, Rafael.",2366660,2368660,Isto também é a vontade de Deus.,Deus só nos castiga.,4,"['vontade', 'Deus', 'Rafael']"
+Empurra,"Empurra o gajo, caralho!",2640620,2642940,"Fodase, caralho!", ,5,"['Empurra', 'gajo', 'caralho']"
+gajo,Empurra o gajo.,2631380,2634540,Não!,"Temos de o tirar daqui, não percebes?",4,"['Empurra', 'gajo']"
