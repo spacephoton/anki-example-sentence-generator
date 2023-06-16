@@ -1,12 +1,10 @@
-import json
 import pysubs2
 import spacy
-import urllib.request
-import csv
 import re
 import pandas as pd
 from collections import defaultdict, Counter
 from connect import invoke
+
 
 print('running main.py')
 
@@ -40,10 +38,14 @@ for i in range(len(events)):
     non_stop_words = [word for word in sentence if not word.is_stop and not word.is_punct]
     if len(non_stop_words) < 2:  # Skip sentence if it contains less than two non-stop words
         continue
+    
+    named_entities = {ent.text for ent in sentence.ents}  # Set of all named entities in the sentence
 
     for word in non_stop_words:
-        word_frequencies[word.text] += 1
+        if word.text in named_entities:  # Skip named entities
+            continue
         if len(sentence.text) > len(word_sentences[word.text]["sentence"]) and len(sentence.text) < 70 and len(sentence.text) > 14:
+            word_frequencies[word.text] += 1
             if (sentence.text not in used_sentences):
                 if (word_sentences[word.text]["sentence"] in used_sentences):
                     used_sentences.remove(word_sentences[word.text]["sentence"])
@@ -53,9 +55,11 @@ for i in range(len(events)):
                     "sentence": sentence.text,
                     "start_time": start_time, 
                     "end_time": end_time, 
+                    "lemma": word.lemma_,
                     "sentence_previous": events[i - 1]["text"] if i > 0 else "", 
                     "sentence_next": events[i + 1]["text"] if i < len(events) - 1 else "",
-                    "words": [w.text for w in non_stop_words]  # Add the non-stop words of the sentence
+                    "words": [w.text for w in non_stop_words], # Add the non-stop words of the sentence
+                    "lemmas": [w.lemma_ for w in non_stop_words]  # Add the non-stop words of the sentence
                 }
                 used_sentences.add(sentence.text)
 
@@ -64,13 +68,16 @@ filtered_word_sentences = {word: data for word, data in word_sentences.items() i
 # Convert the filtered_word_sentences dictionary to a pandas DataFrame
 df = pd.DataFrame.from_records([
     {"word": word,
+     "lemma": data["lemma"],
      "sentence": data["sentence"],
      "start_time": data["start_time"],
      "end_time": data["end_time"],
      "sentence_previous": data["sentence_previous"],
      "sentence_next": data["sentence_next"],
      "occurrences": word_frequencies[word],
-     "words": data["words"]}  # Include the sentence words
+     "words": data["words"],
+     "lemmas": data["lemmas"]
+     }  # Include the sentence words
     for word, data in filtered_word_sentences.items()
 ])
 
