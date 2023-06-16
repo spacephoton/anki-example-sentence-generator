@@ -1,117 +1,70 @@
 import json
-import urllib.request
-
-import pandas as pd
-from tatoebatools import ParallelCorpus
+import pysubs2
 import spacy
-nlp = spacy.load("zh_core_web_sm")
-from zhconv import convert
+import urllib.request
+import csv
+import re
+import pandas as pd
+from collections import defaultdict, Counter
+from connect import invoke
 
-def request(action, **params):
-    return {'action': action, 'params': params, 'version': 6}
+print('running main.py')
 
-def invoke(action, **params):
-    requestJson = json.dumps(request(action, **params)).encode('utf-8')
-    response = json.load(urllib.request.urlopen(urllib.request.Request('http://localhost:8765', requestJson)))
-    if len(response) != 2:
-        raise Exception('response has an unexpected number of fields')
-    if 'error' not in response:
-        raise Exception('response is missing required error field')
-    if 'result' not in response:
-        raise Exception('response is missing required result field')
-    if response['error'] is not None:
-        raise Exception(response['error'])
-    return response['result']
+nlp = spacy.load("pt_core_news_sm")
 
-def toSimplified(str):
-    return convert(str, "zh-cn")
+word_frequencies = Counter()
+word_sentences = defaultdict(lambda: {"sentence": "", "sentence_previous": "", "sentence_next": ""})
 
+subs = pysubs2.load("tide_pt.srt", format_="srt", encoding="utf-8")
+subs.shift(s=2.5)
 
-FIELD_WORD = "Simplified"
-FIELD_SENTENCE = "SentenceSimplified"
-FIELD_CLOZE = "SentenceSimplifiedCloze"
-FIELD_TRANSLATION = "SentenceMeaning"
+events = []
 
+for event in subs:
+    text = event.text
 
-def getChineseCards():
-    selectedDeck = "..P::.LANG::Chinese"
-    # selectedDeck = "deck:zTEST::Chinese"
-    print("Chinese cards....", "deck:{}".format(selectedDeck))
-    # chineseCards = invoke("findCards", query='deck:...P::.LANG::Chinese')
-    # chineseCards = invoke("findCards", query='deck:current')
-    chineseCards = invoke("findCards", query=selectedDeck)
-    # cardsToNotes
-    chineseNotes = invoke("cardsToNotes", cards=chineseCards)
-    print("Chinese NOTES are")
-    print(chineseNotes, "...")
+    # Remove unwanted text
+    text = re.sub(r'\[.*?\]', '', text)  # Remove text within []
+    text = text.replace('\\N', ' ').replace('{\\an8}', '').replace('{\\i0}', '') # Remove unwanted special characters
+    text = text.replace('i0}', '').replace('{\\i1}', '')
+    text = re.sub(r'[^\w\s.,?!]', '', text)  # Remove any character that is not a word character, space or .,?!
 
-    # find notes with missing sentence
-    print("Chinese NOTES with MISSING SENTENCE")
-    notes = []
-    notesInfo = invoke("notesInfo", notes=chineseNotes)
+    doc = nlp(text)
+    for sent in doc.sents:
+        events.append({"text": sent.text, "start": event.start, "end": event.end})
 
-    notesInfoWithoutSentence = [noteInfo for noteInfo in notesInfo if noteInfo['fields'][FIELD_SENTENCE]['value'] == '']
+for i in range(len(events)):
+    event = events[i]
+    sentence = nlp(event["text"])
+    non_stop_words = [word for word in sentence if not word.is_stop and not word.is_punct]
+    if len(non_stop_words) < 3:  # Skip sentence if it contains less than three non-stop words
+        continue
 
-    # word - noteId - [sentences] - [clozeSentences] - [translations]
-    words = {}
-    for noteInfo in notesInfoWithoutSentence:
-        word = noteInfo['fields'][FIELD_WORD]['value']
-        noteId = noteInfo['noteId']
-        words[word] = [word, noteId, [], [], []]
-        # print(noteInfo['fields'][FIELD_SENTENCE])
-        print(word)
-    print(words)
+    for word in non_stop_words:
+        word_frequencies[word.text] += 1
+        if len(sentence.text) > len(word_sentences[word.text]["sentence"]):
+            word_sentences[word.text] = {
+                "sentence": sentence.text, 
+                "start_time": str(event["start"]), 
+                "end_time": str(event["end"]), 
+                "sentence_previous": events[i - 1]["text"] if i > 0 else "", 
+                "sentence_next": events[i + 1]["text"] if i < len(events) - 1 else ""
+            }
 
-    chineseSentences = ParallelCorpus("cmn", "eng")
-    count = 0
-    for sentence, translation in chineseSentences:
-        # print(sentence.text, translation.text)
-        if count < 1000000:
-            if (count % 100 == 0):
-                print(count)
-            sentence_text = toSimplified(sentence.text)
-            zh_tokens = nlp(sentence_text)
-            for token in zh_tokens:
-                if token.text in words and len(words[token.text][2]) <= 5:
-                    # Add sentence
-                    words[token.text][2].append(sentence_text)
-                    # add cloze deletion
-                    words[token.text][3].append(sentence_text.replace(token.text, "[ ]"))
-                    # add translation
-                    words[token.text][4].append(translation.text)
-            count+=1
-        else:
-            break
-    df = pd.DataFrame.from_dict(words, orient='index', columns=['word', 'note_id', 'sentences', 'sentences_cloze', 'en_translations'])
-    df.to_csv("./sentences.csv")
-    return df
+filtered_word_sentences = {word: data for word, data in word_sentences.items() if (len(word) >= 3 and word_frequencies[word] >= 3)}
 
-def df_to_anki(df):
-    #save the sentences to anki
-    for index, row in df.iterrows():
-        print(row, row['sentences'])
-        word = row['word']
-        note_id = row['note_id']
-        sentences = row['sentences']
-        sentences_cloze = row['sentences_cloze']
-        en_translations = row['en_translations']
-        if len(sentences) > 0:
-            # print(row, sentences[0])
-            index = 0
-            # keep sentence short
-            for i in range(len(sentences) - 1):
-                if len(sentences[i]) > 25:
-                    index += 1
+# Convert the filtered_word_sentences dictionary to a pandas DataFrame
+df = pd.DataFrame.from_records([
+    {"word": word,
+     "sentence": data["sentence"],
+     "start_time": data["start_time"],
+     "end_time": data["end_time"],
+     "sentence_previous": data["sentence_previous"],
+     "sentence_next": data["sentence_next"],
+     "occurrences": word_frequencies[word]} 
+    for word, data in filtered_word_sentences.items()
+])
 
-            #update
-            invoke("updateNoteFields", note={"id":note_id, "fields":{
-                FIELD_SENTENCE:sentences[index],
-                FIELD_CLOZE:sentences_cloze[index],
-                FIELD_TRANSLATION:en_translations[index],
-            }})
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    sentences_df = getChineseCards()
-    df_to_anki(sentences_df)
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Save DataFrame to a CSV file
+df.to_csv('word_sentences.csv', index=False)
+df.to_pickle('word_sentences.pkl')
