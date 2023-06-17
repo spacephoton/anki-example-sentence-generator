@@ -4,7 +4,7 @@ import re
 import pandas as pd
 from collections import defaultdict, Counter
 from connect import invoke
-
+from ai import translate
 
 print('running main.py')
 
@@ -26,7 +26,7 @@ for event in subs:
     text = re.sub(r'\[.*?\]', '', text)  # Remove text within []
     text = text.replace('\\N', ' ').replace('{\\an8}', '').replace('{\\i0}', '') # Remove unwanted special characters
     text = text.replace('i0}', '').replace('{\\i1}', '')
-    text = re.sub(r'[^\w\s.,?!]', '', text)  # Remove any character that is not a word character, space or .,?!
+    text = re.sub(r'[^\w\s.,-?!]', '', text)  # Remove any character that is not a word character, space or .,?!
 
     doc = nlp(text)
     for sent in doc.sents:
@@ -51,17 +51,21 @@ for i in range(len(events)):
                     used_sentences.remove(word_sentences[word.text]["sentence"])
                 start_time = str(event["start"])
                 end_time = str(event["end"])
+                sentence_previous = events[i - 1]["text"] if i > 0 else "", 
+                sentence_next = events[i + 1]["text"] if i < len(events) - 1 else "",
+
                 word_sentences[word.text] = {
                     "sentence": sentence.text,
                     "start_time": start_time, 
-                    "end_time": end_time, 
+                    "end_time": end_time,
                     "lemma": word.lemma_,
-                    "sentence_previous": events[i - 1]["text"] if i > 0 else "", 
-                    "sentence_next": events[i + 1]["text"] if i < len(events) - 1 else "",
+                    "sentence_previous": sentence_previous,
+                    "sentence_next": sentence_next,
                     "words": [w.text for w in non_stop_words], # Add the non-stop words of the sentence
                     "lemmas": [w.lemma_ for w in non_stop_words]  # Add the non-stop words of the sentence
                 }
                 used_sentences.add(sentence.text)
+                
 
 filtered_word_sentences = {word: data for word, data in word_sentences.items() if (len(word) >= 3 and word_frequencies[word] >= 3 and data.get('start_time'))}
 
